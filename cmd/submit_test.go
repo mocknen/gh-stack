@@ -29,21 +29,10 @@ func TestGeneratePRBody(t *testing.T) {
 		wantNotContains []string
 	}{
 		{
-			name:       "empty commit body no template",
-			commitBody: "",
-			wantContains: []string{
-				"GitHub Stacks CLI",
-				feedbackURL,
-				"<sub>",
-			},
-		},
-		{
 			name:       "with commit body no template",
 			commitBody: "This is a detailed description\nof the change.",
 			wantContains: []string{
 				"This is a detailed description\nof the change.",
-				"GitHub Stacks CLI",
-				"<sub>",
 			},
 		},
 		{

@@ -2121,7 +2121,6 @@ func TestLink_IgnoresSymlinkedPRTemplate(t *testing.T) {
 
 	assert.NoError(t, err)
 	assert.NotContains(t, capturedBody, "LINKED_FILE_CONTENTS", "symlinked template contents must not be included in the PR body")
-	assert.Contains(t, capturedBody, "GitHub Stacks CLI", "template ignored, footer fallback should be used")
 }
 
 func TestLink_PRNumbers_NoTemplateUsesFooter(t *testing.T) {
@@ -2174,7 +2173,6 @@ func TestLink_PRNumbers_NoTemplateUsesFooter(t *testing.T) {
 	_, _ = io.ReadAll(errR)
 
 	assert.NoError(t, err)
-	assert.Contains(t, capturedBody, "GitHub Stacks CLI", "footer should be present when no template")
 }
 
 // --- PR URL tests ---
